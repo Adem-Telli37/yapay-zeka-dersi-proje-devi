@@ -1,6 +1,6 @@
 # yapay-zeka-dersi-proje-devi
  Tarım Projesi: Ürün Yetiştiricilik Sorunlarının Benzerlik Analizi
-📑 Tarım Projesi - Yapay Zeka Ödevi: Aşamalar ve Açıklamalar
+ Tarım Projesi - Yapay Zeka Ödevi: Aşamalar ve Açıklamalar
 1. Kütüphanelerin Yüklenmesi ve Hazırlık
 Pandas, NLTK, re, csv, wordcloud, matplotlib gibi Python kütüphaneleri projeye dahil edildi.
 
@@ -63,7 +63,7 @@ Boyut küçülmesi hesaplandı.
 
 Örneğin: yaklaşık %6.88'lik bir veri küçülmesi sağlandı.
 
-🎯 Genel Değerlendirme
+ Genel Değerlendirme
 Bu proje ile:
 
 Tarımsal şikayet verileri temizlendi ve ön işlendi.
