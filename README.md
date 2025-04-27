@@ -1,4 +1,4 @@
-# yapay-zeka-dersi-proje-devi
+# yapay-zeka-dersi-proje-devi Tarım Projesi: Ürün Yetiştiricilik Sorunlarının Benzerlik Analizi
  Tarım Projesi: Ürün Yetiştiricilik Sorunlarının Benzerlik Analizi
  Tarım Projesi - Yapay Zeka Ödevi: Aşamalar ve Açıklamalar
 1. Kütüphanelerin Yüklenmesi ve Hazırlık
