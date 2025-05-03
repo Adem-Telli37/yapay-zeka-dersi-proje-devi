@@ -76,6 +76,7 @@ Veri boyutu optimize edilerek gereksiz kelimelerden arındırıldı.
 
 
 Tarım Sorunları Analizi Ödevi
+
 Merhaba, bu proje benim ödev-1 için hazırladığım tarım sorunları analizi çalışmasıdır. Çiftçilerin tarım sorunlarını doğal dil işleme (NLP) yöntemleriyle inceledim. Ziraatciyiz.biz ve Tarimziraat.com forumlarından toplanmış 200 satırlık bir veri seti kullandım. Bu projede veri setini temizledim, kelime frekanslarını analiz ettim, TF-IDF vektörleri oluşturdum ve Word2Vec modelleri eğittim. Ödevi yaparken hem teknik hem de tarım açısından çok şey öğrendim. Aşağıda projenin detaylarını, nasıl çalıştığını ve dosyaları bulabilirsiniz.
 Projenin Amacı
 Bu ödevde, çiftçilerin tarım sorunlarını metin tabanlı bir veri setiyle analiz etmeyi amaçladım. Veri seti, Türkiye'deki çiftçilerin gerçek sorunlarını içeriyor (örneğin, yaprak hastalıkları, verim kaybı). Amacım:
