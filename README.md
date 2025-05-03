@@ -74,3 +74,101 @@ Görselleştirme (WordCloud) ile en çok kullanılan kelimeler belirlendi.
 
 Veri boyutu optimize edilerek gereksiz kelimelerden arındırıldı.
 
+Tarım Sorunları Analizi Ödevi
+Merhaba, bu proje benim ödev-1 için hazırladığım tarım sorunları analizi çalışmasıdır. Çiftçilerin tarım sorunlarını doğal dil işleme (NLP) yöntemleriyle inceledim. Ziraatciyiz.biz ve Tarimziraat.com forumlarından toplanmış 200 satırlık bir veri seti kullandım. Bu projede veri setini temizledim, kelime frekanslarını analiz ettim, TF-IDF vektörleri oluşturdum ve Word2Vec modelleri eğittim. Ödevi yaparken hem teknik hem de tarım açısından çok şey öğrendim. Aşağıda projenin detaylarını, nasıl çalıştığını ve dosyaları bulabilirsiniz.
+
+Projenin Amacı
+Bu ödevde, çiftçilerin tarım sorunlarını metin tabanlı bir veri setiyle analiz etmeyi amaçladım. Veri seti, Türkiye’deki çiftçilerin gerçek sorunlarını içeriyor (örneğin, yaprak hastalıkları, verim kaybı). Amacım:
+
+Sorunların dil özelliklerini anlamak (örneğin, hangi kelimeler sık kullanılıyor).
+Zipf yasasına uygunluğunu test etmek.
+TF-IDF ile önemli kelimeleri bulmak.
+Word2Vec ile sorunlar arasındaki anlam ilişkilerini keşfetmek (örneğin, “sorun” kelimesi “hastalık” ile benzer mi).
+Bu analiz, tarım sorunlarını otomatik sınıflandırmak veya çözüm önermek için temel oluşturabilir.
+
+Veri Seti
+Veri seti, Ziraatciyiz.biz ve Tarimziraat.com forumlarından derlenmiş. Özellikleri:
+
+Dosya: tarim_problemleri_veriseti.csv
+
+Satır Sayısı: 200
+
+Boyut: ~100 kb kadar
+
+Sütunlar:
+
+sorun_id: Benzersiz ID (1’den 200’e).
+sorun_metin: Çiftçinin sorunu (örneğin, “Şeftali tarlamızda yapraklarda kahverengileşme oldu.”).
+urun_turu: Ürün (Şeftali, Domates, Buğday, vb.).
+sorun_kategorisi: Sorun türü (Hastalık, Böcek, Verim Kaybı, vb.).
+ornek_cozum: Çözüm önerisi (örneğin, “Toprak analizi yaptırın.”).
+Örnek Satır:
+
+1,Bu yaz şeftali tarlamızda yapraklarda kahverengileşme ve büzüşme oldu. Sulama artırdık ama düzelme yok.,Şeftali,Hastalık,Organik mantar ilacı kullanın, toprak analizi yaptırın.
+Kullanılan Kütüphaneler
+Projeyi yazarken şu Python kütüphanelerini kullandım:
+
+pandas: Veri setini yüklemek ve düzenlemek.
+nltk: Metin ön işleme (tokenization, stopwords kaldırma).
+scikit-learn: TF-IDF vektörleştirme.
+gensim: Word2Vec modelleri.
+matplotlib: Zipf grafikleri çizimi.
+numpy: Matris işlemleri.
+Kurulum ve Çalıştırma
+Kodu çalıştırmak için şu adımları izleyin:
+
+Kütüphaneleri Yükleyin:
+
+pip install pandas nltk scikit-learn gensim matplotlib numpy
+NLTK Kaynaklarını İndirin: Python’da:
+
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+Repoyu Klonlayın:
+
+git clone https://github.com/<kullanici-adi>/tarim-sorunlari-analizi.git
+cd tarim-sorunlari-analizi
+Kodu Çalıştırın:
+
+python tarim_sorunlari_analizi.py
+tarim_problemleri_veriseti.csv aynı klasörde olmalı.
+Çıktılar (CSV’ler, modeller, grafikler) otomatik oluşacak.
+Proje Adımları
+Ödevi yaparken şu adımları takip ettim:
+
+Veri Yükleme: Veri setini pandas ile yükledim.
+Ön İşleme:
+Metinleri küçük harfe çevirdim.
+Noktalama işaretlerini kaldırdım.
+Türkçe stopwords’ları (örneğin, “ve”, “ile”) temizledim.
+Basit lemmatization (örneğin, “yaprakları” → “yaprak”) ve stemming (örneğin, “yapraklar” → “yapr”) yaptım.
+Zipf Analizi: Ham ve temizlenmiş veriler için kelime frekanslarını analiz ettim, log-log grafikler çizdim.
+TF-IDF: Lemmatized ve stemmed metinler için TF-IDF matrisleri oluşturdum.
+Word2Vec: 8 parametre setiyle (CBOW/Skip-gram, window=2/4, vector_size=100/300) 16 model eğittim.
+Sonuçlar: Her adımın çıktılarını kaydettim, rapor yazdım.
+Dosyalar
+Repoda şu dosyalar var:
+
+tarim_problemleri_veriseti.csv: 200 satırlık veri seti.
+tarim_sorunlari_analizi.py: Analizleri yapan kod.
+lemmatized_sentences.csv: Lemmatized temizlenmiş metinler.
+stemmed_sentences.csv: Stemmed temizlenmiş metinler.
+tfidf_lemmatized.csv: Lemmatized TF-IDF matrisi.
+tfidf_stemmed.csv: Stemmed TF-IDF matrisi.
+lemmatized_model_*.model: 8 lemmatized Word2Vec modeli.
+stemmed_model_*.model: 8 stemmed Word2Vec modeli.
+zipf_raw.png: Ham veri Zipf grafiği.
+zipf_cleaned.png: Temizlenmiş veri Zipf grafiği.
+Öğrendiklerim
+Bu ödev sayesinde:
+
+NLP’nin tarım gibi alanlarda nasıl kullanılabileceğini gördüm.
+Türkçe metin işleme (lemmatization, stemming) zor ama faydalıymış.
+TF-IDF ve Word2Vec’in nasıl çalıştığını daha iyi anladım.
+Zipf yasasının doğal dilde neden önemli olduğunu öğrendim.
+Notlar
+Word2Vec modelleri biraz büyük, hepsini yüklemek yerine birkaçını seçebilirsiniz veya models.zip yapabilirsiniz.
+Detaylı açıklamalar ve sonuçlar PDF raporda.
+Sorularınız olursa bana GitHub üzerinden yazabilirsiniz!
+Teşekkürler, iyi incelemeler! 😊
