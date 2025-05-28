@@ -168,12 +168,17 @@ Teşekkürler, iyi incelemeler!
 
   
 Tarım Sorunları Analizi ve Benzerlik Hesaplama
+
 Bu proje, tarım forumlarındaki sorun metinlerini kümeler ve benzerlik analizi yapar. Yapay Zeka Dersi Ödev-1 ve Ödev-2 gerekliliklerini karşılar.
+
 Gereksinimler
+
 •	Python 3.x
 •	Kütüphaneler: pandas, nltk, scikit-learn, gensim, matplotlib
 •	Kurulum: pip install pandas nltk scikit-learn gensim matplotlib
+
 Dosya Yapısı
+
 •	tarim_problemleri_veriseti.csv: Ham veri seti
 •	tfidf_lemmatized.csv, tfidf_stemmed.csv: TF-IDF matrisleri
 •	word2vec_*.model: Word2Vec modelleri
@@ -183,14 +188,20 @@ Dosya Yapısı
 •	jaccard_matrix.csv: Jaccard matrisi
 •	semantic_evaluation.csv: Anlamsal değerlendirme tablosu
 •	clustered_problems_with_solutions.csv: Kümelenmiş sorunlar ve çözümler
+
 Çalıştırma Talimatları
+
 1.	Veri seti ve model dosyalarını aynı dizine yerleştirin.
 2.	Jupyter Notebook’ta betiği çalıştırın:
 jupyter notebook tarim_tam_proje.ipynb
+
 3.	Çıktılar:
+
 o	Hücrelerde: Veri seti, TF-IDF/Word2Vec sonuçları, kümelenmiş metinler, anlamsal değerlendirme, Jaccard matrisi, grafikler.
 o	Dosyalar: tfidf_*.csv, jaccard_matrix.csv, semantic_evaluation.csv, clustered_problems_with_solutions.csv, zipf_plot.png, elbow_plot.png.
+
 Notlar
+
 •	Word2Vec modelleri yoksa betik otomatik eğitir (yavaş olabilir).
 •	Anlamsal skorlar örnek olarak verilmiştir; manuel analiz yapmalısınız.
 
